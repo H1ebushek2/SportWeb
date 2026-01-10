@@ -26,3 +26,25 @@ myForm.onsubmit = function(event) {
     closeModal();
     myForm.reset();
 }
+
+var burgerbtn = document.getElementById('burger');
+var menu = document.getElementById('nav-menu');
+
+burgerbtn.onclick = function() {
+    if (burgerbtn.className === 'burger') {
+        burgerbtn.className = 'burger open';
+        menu.className = 'nav-link active';
+    } else {
+        burgerbtn.className = 'burger';
+        menu.className = 'nav-link';
+    }
+};
+
+var ref = document.getElementsByTagName('a');
+
+for (var i = 0; i < ref.length; i++) {
+    ref[i].onclick = function() {
+        burgerbtn.className = 'burger';
+        menu.className = 'nav-link';
+    };
+}
